@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact Generator</h1>
+        <p id="fact"></p>
+        <button id="generate-btn">Generate Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Earth is the only planet not named after a god.",
+            "The Earth's atmosphere is composed of 78% nitrogen, 21% oxygen, and trace amounts of other gases.",
+            "Earth is the densest planet in the Solar System.",
+            "The Earth's rotation is gradually slowing.",
+            "The highest point on Earth is Mount Everest.",
+            "Earth has a powerful magnetic field that protects it from harmful solar radiation.",
+            "The Earth's oceans contain about 97% of the planet's water.",
+            "Earth is the only known planet to support life.",
+            "The Earth's core is as hot as the surface of the sun.",
+            "Earth is about 4.5 billion years old."
+        ];
+
+        const factElement = document.getElementById('fact');
+        const generateBtn = document.getElementById('generate-btn');
+
+        generateBtn.addEventListener('click', () => {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            factElement.textContent = randomFact;
+        });
+    </script>
+</body>
+</html>
